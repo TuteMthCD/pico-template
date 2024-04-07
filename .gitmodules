@@ -1,3 +1,4 @@
-[submodule "extern/pico-sdk"]
-	path = extern/pico-sdk
-	url = https://github.com/raspberrypi/pico-sdk
+
+[submodule "extern/gcc-arm-none-eabi-win32"]
+	path = extern/gcc-arm-none-eabi-win32
+	url = https://github.com/aliosthings/gcc-arm-none-eabi-win32
