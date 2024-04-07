@@ -6,7 +6,7 @@ Button::Button(uint8_t _pin) {
     gpio_pull_up(pin);
 }
 
-Button::Button(uint8_t _pin, uint16_t _fastPress): Button(_pin){
+Button::Button(uint8_t _pin, uint16_t _fastPress) : Button(_pin) {
     fastPressed = _fastPress;
 }
 
@@ -17,8 +17,7 @@ void Button::handle() {
         if(!pressed) {
             timeInit = get_absolute_time();
             pressed = true;
-            if(p_onFalling != NULL)
-                p_onFalling(); // onfalling se puede llegar a ejecuar 2 a 3 veces
+            if(p_onFalling != NULL) p_onFalling(); // onfalling se puede llegar a ejecuar 2 a 3 veces
         }
     } else {
         if(pressed) {
@@ -33,7 +32,8 @@ void Button::handle() {
         } else if(timePressed > fastPressed) {
             if(p_onLongPress != NULL) {
                 p_onLongPress();
-            } else if(p_onPress != NULL) p_onPress();
+            } else if(p_onPress != NULL)
+                p_onPress();
         }
         timePressed = 0;
     }
